@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Tarot';
+  /* Replace 'TarotElegant-Bold.ttf' with your actual bold font file name */
+  src: url('./assets/fonts/CormorantSC-Bold.ttf') format('ttf');
+  font-weight: 700; /* Use 700 for bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tarot';
+  /* Replace 'TarotElegant-Regular.ttf' with your actual regular font file name */
+  src: url('./assets/fonts/CormorantSC-Regular.ttf') format('ttf');
+  font-weight: 400; /* Use 400 for normal/regular */
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  @apply bg-gradient-to-b from-indigo-950 to-purple-900 text-gray-100 font-serif min-h-screen;
+  font-family: 'Tarot', serif;
 }

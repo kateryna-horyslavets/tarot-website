@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', "serif"],
+        tarot: ['"CormorantSC-Bold"', "CormorantSC-Light", "CormorantSC-Medium", "CormorantSC-Regular", "CormorantSC-SemiBold", "serif",'],']
       },
     },
   },
