@@ -4,8 +4,6 @@ import { NavLink, Link } from 'react-router-dom';
 const mainNavItems = [
     { name: 'Головна', path: '/' },
 ];
-
-// Define the deck links for the dropdown
 const deckItems = [
     { name: 'Таро Уейта', path: '/tarots/waite' },
     { name: 'Таро Ніколетти Чекколі', path: '/tarots/ceccoli' },
@@ -15,8 +13,6 @@ const LOGO_ICON_PATH = '/logo.png';
 
 export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    // Removed font-tarot from here, as it will be applied to the parent <nav>
     const getLinkClasses = ({ isActive }) =>
         `py-2 px-3 transition-colors duration-200 text-lg font-normal whitespace-nowrap 
          md:p-0 ml-6
@@ -31,9 +27,8 @@ export default function Navbar() {
     };
 
     return (
-        // *** FONT APPLIED HERE: font-tarot ensures all children inherit the font ***
         <nav className="bg-white border-b border-t border-gray-200 font-tarot">
-            <div className="max-w-screen-2xl flex items-center justify-between mx-auto h-20 px-8">
+            <div className="flex items-center justify-between h-20 px-8">
 
                 <NavLink to="/" className="flex items-center space-x-4">
                     <img
@@ -41,8 +36,6 @@ export default function Navbar() {
                         alt="MyTarotGuide Logo"
                         className="h-12 w-12"
                     />
-
-                    {/* FONT is now inherited, removed redundant font-tarot class */}
                     <span className="self-center text-3xl font-normal whitespace-nowrap text-amber-900 tracking-wider">
                         MyTarotGuide
                     </span>
@@ -51,8 +44,6 @@ export default function Navbar() {
                 <div className="flex items-center">
 
                     <ul className="flex items-center">
-
-                        {/* Main Links (inherits font) */}
                         {mainNavItems.map((item) => (
                             <li key={item.name}>
                                 <NavLink
@@ -68,7 +59,6 @@ export default function Navbar() {
                         <li className="relative ml-6">
                             <button
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                // FONT is now inherited, removed redundant font-tarot class
                                 className={`flex items-center text-lg font-normal text-stone-700 hover:text-amber-800 transition-colors duration-200`}
                             >
                                 Колоди таро
@@ -84,7 +74,6 @@ export default function Navbar() {
                                             <li key={item.name}>
                                                 <Link
                                                     to={item.path}
-                                                    // FONT is now inherited, removed redundant font-tarot class
                                                     className="block px-4 py-2 hover:bg-gray-50 hover:text-amber-800"
                                                     onClick={handleLinkClick}
                                                 >
@@ -107,8 +96,6 @@ export default function Navbar() {
                             </NavLink>
                         </li>
                     </ul>
-
-                    {/* FONT is now inherited, removed redundant font-tarot class */}
                     <button className="bg-amber-950 text-white text-lg font-normal h-10 w-12 flex items-center justify-center rounded-lg shadow-md hover:bg-amber-900 transition-colors duration-200 ml-12">
                         UA
                     </button>
