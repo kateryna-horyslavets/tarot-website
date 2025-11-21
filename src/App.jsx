@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from './Language';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
 import Home from "./pages/Home";
@@ -13,6 +14,7 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
     return (
+        <LanguageProvider>
         <Router>
             <div className="flex flex-col min-h-screen bg-gradient-to-b from-purple-50 to-purple-100">
                 <Navbar />
@@ -33,5 +35,6 @@ export default function App() {
                 <Footer />
             </div>
         </Router>
+        </LanguageProvider>
     );
 }
