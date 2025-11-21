@@ -90,7 +90,7 @@ export default function Home() {
                     name: "NICOLETTA CECCOLI TAROT",
                     path: "/ceccoli",
                     img: DECK_CECOLI_IMG,
-                    description: "Ideal for those seeking a deck for intuitive divination, fairy tales, emotional states, and relationships. It has a soft but deep energy"
+                    description: "Ideal for those seeking a deck for intuitive divination, fairy tales, emotional states and relationships. It has a soft but deep energy"
                 },
                 {
                     name: "MANARA TAROT",
