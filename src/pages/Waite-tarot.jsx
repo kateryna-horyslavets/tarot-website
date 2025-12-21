@@ -72,21 +72,25 @@ export default function WaiteTarotPage() {
                 {
                     name: "ЧАШІ",
                     img: CUPS,
+                    path: "/cups",
                     description: "Як стихія води, чаші занурюють нас у світ емоцій та інтуїції, відображаючи всі аспекти любові, дружби, чуттєвості та підсвідомих переживань, що формують наше внутрішнє життя"
                 },
                 {
                     name: "ПЕНТАКЛІ",
                     img: PENTACLES,
+                    path: "/pentacles",
                     description: "Ця земна масть уособлює матеріальні цінності та стабільність, охоплюючи всі питання фінансів, здоров'я, практичності, і нагадує про необхідність цінувати ресурси та дбати про своє фізичне благополуччя"
                 },
                 {
                     name: "МЕЧІ",
                     img: SWORDS,
+                    path: "/swords",
                     description: "Представляючи повітря, мечі є гострим інструментом інтелекту та логіки, що керує комунікацією, необхідністю приймати важкі рішення та боротьбою за істину, часто вказуючи на конфлікти, викликані думками"
                 },
                 {
                     name: "ЖЕЗЛИ",
                     img: WANDS,
+                    path: "/wands",
                     description: "Ця вогняна масть символізує енергію волі та творчості, вона керує нашими амбіціями, кар'єрним зростанням і є іскрою, що запалює нові проєкти та пристрасне бажання рухатися вперед"
                 },
             ],
@@ -124,21 +128,25 @@ export default function WaiteTarotPage() {
                 {
                     name: "CUPS",
                     img: CUPS,
+                    path: "/cups",
                     description: "As the water element, cups immerse us in the world of emotions and intuition, reflecting all aspects of love, friendship, sensuality and subconscious experiences that shape our inner life."
                 },
                 {
                     name: "PENTACLES",
                     img: PENTACLES,
+                    path: "/pentacles",
                     description: "This earth suit embodies material values and stability, encompassing all matters of finance, health, practicality and reminds us to appreciate resources and care for our physical well-being."
                 },
                 {
                     name: "SWORDS",
                     img: SWORDS,
+                    path: "/swords",
                     description: "Representing air, swords are a sharp tool of intellect and logic, governing communication, the need to make hard decisions and the struggle for truth, often indicating conflicts caused by thoughts."
                 },
                 {
                     name: "WANDS",
                     img: WANDS,
+                    path: "/wands",
                     description: "This fire suit symbolizes the energy of will and creativity, governing our ambitions, career growth and is the spark that ignites new projects and passionate desire to move forward."
                 },
             ],
@@ -213,7 +221,7 @@ export default function WaiteTarotPage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {majorArcana.map((card, index) => (
                             <Link
-                                to={card.path}
+                                to={card.path || "#"} // Added fallback for Major Arcana since they don't have paths yet
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 20 ? 'md:col-start-2' : ''
