@@ -36,7 +36,7 @@ export default function WaiteTarotPage() {
     const { language } = useContext(LanguageContext);
 
     const baseTextStyle = "text-amber-950 font-tarot-elegant text-opacity-90";
-    const sectionHeadingStyle = "text-xl md:text-5xl font-normal text-amber-950 mb-2 font-tarot-elegant";
+    const sectionHeadingStyle = "text-xl md:text-4xl font-normal text-amber-950 font-tarot-elegant";
 
     const content = {
         ua: {
