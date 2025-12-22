@@ -19,7 +19,7 @@ import GROUP_SWORDS from '../assets/images/swords page/Group_swords.png';
 import SWORDS_BACKGROUND_IMG from '../assets/images/swords page/swords_background.png';
 import SWORDS_HERO_BACKGROUND_IMG from '../assets/images/swords page/swords_hero.png';
 
-export default function Cups() {
+export default function Swords() {
     const { language } = useContext(LanguageContext);
 
     const baseTextStyle = "text-amber-950 font-tarot-elegant text-opacity-90";
