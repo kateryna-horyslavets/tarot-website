@@ -415,7 +415,7 @@ export default function Cups() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {defaultSwords.map((card, index) => (
                             <a
-                                href={`#default-cup-${index}`}
+                                href={`#default-sword-${index}`}
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 8 ? 'md:col-start-2' : ''
@@ -446,7 +446,7 @@ export default function Cups() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {courtiersSwords.map((card, index) => (
                             <a
-                                href={`#courtier-cup-${index}`}
+                                href={`#courtier-sword-${index}`}
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105`}
                             >
@@ -475,7 +475,7 @@ export default function Cups() {
                     <div className="flex flex-col gap-24">
                         {defaultSwords.map((card, index) => (
                             <div
-                                id={`default-cup-${index}`}
+                                id={`default-sword-${index}`}
                                 key={card.name}
                                 className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-start scroll-mt-24`}
                             >
@@ -493,7 +493,7 @@ export default function Cups() {
 
                         {courtiersSwords.map((card, index) => (
                             <div
-                                id={`courtier-cup-${index}`}
+                                id={`courtier-sword-${index}`}
                                 key={card.name}
                                 className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-start scroll-mt-24`}
                             >

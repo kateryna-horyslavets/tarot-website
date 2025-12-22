@@ -415,7 +415,7 @@ export default function Pentacles() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {defaultCups.map((card, index) => (
                             <a
-                                href={`#default-cup-${index}`}
+                                href={`#default-pentacle-${index}`}
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 8 ? 'md:col-start-2' : ''
@@ -446,7 +446,7 @@ export default function Pentacles() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {courtiersCups.map((card, index) => (
                             <a
-                                href={`#courtier-cup-${index}`}
+                                href={`#courtier-pentacle-${index}`}
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105`}
                             >
@@ -475,7 +475,7 @@ export default function Pentacles() {
                     <div className="flex flex-col gap-24">
                         {defaultCups.map((card, index) => (
                             <div
-                                id={`default-cup-${index}`}
+                                id={`default-pentacle-${index}`}
                                 key={card.name}
                                 className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-start scroll-mt-24`}
                             >
@@ -493,7 +493,7 @@ export default function Pentacles() {
 
                         {courtiersCups.map((card, index) => (
                             <div
-                                id={`courtier-cup-${index}`}
+                                id={`courtier-pentacle-${index}`}
                                 key={card.name}
                                 className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-start scroll-mt-24`}
                             >
