@@ -218,7 +218,7 @@ export default function Cups() {
                         "\n" +
                         "Career: satisfying work, creative project, harmony in the team. Success in art or psychology.\n" +
                         "\n" +
-                        "Advice: let your feelings flow freely, act from a pure heart.",},
+                        "Advice: let your feelings flow freely, act from a pure heart."},
                 {name: "2 CUPS",
                     img: CUPS_2,
                     text: "Main meaning: harmonious union, partnership, mutual love, reconciliation, union, engagement, balanced relationship.\n" +
