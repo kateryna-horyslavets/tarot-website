@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from './Language';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import WaiteTarotPage from "./pages/Waite-tarot";
 import CeccoliTarotPage from "./pages/Ceccoli-tarot";
@@ -16,6 +17,7 @@ export default function App() {
     return (
         <LanguageProvider>
         <Router>
+            <ScrollToTop />
             <div className="flex flex-col min-h-screen bg-gradient-to-b from-purple-50 to-purple-100">
                 <Navbar />
                 <main className="flex-grow">
