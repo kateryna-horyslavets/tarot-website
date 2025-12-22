@@ -221,7 +221,7 @@ export default function WaiteTarotPage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {majorArcana.map((card, index) => (
                             <Link
-                                to={card.path || "#"} // Added fallback for Major Arcana since they don't have paths yet
+                                to={card.path || "#"}
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 20 ? 'md:col-start-2' : ''
