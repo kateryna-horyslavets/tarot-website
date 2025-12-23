@@ -16,7 +16,7 @@ export default function Navbar() {
             moon: 'Таро Божевільного Місяця',
             ceccoli: 'Таро Ніколетти Чекколі',
             manara: 'Таро Манара',
-            consequences: 'Таро Наслідків',
+            after: 'Таро Наслідків',
             faq: 'Поширені питання',
             lang: 'UA',
         },
@@ -27,7 +27,7 @@ export default function Navbar() {
             moon: 'Deviant Moon tarot',
             ceccoli: 'Nicoletta Ceccoli tarot',
             manara: 'Manara tarot',
-            consequences: 'After tarot',
+            after: 'After tarot',
             faq: 'FAQ',
             lang: 'EN',
         },
@@ -130,11 +130,11 @@ export default function Navbar() {
                                         </li>
                                         <li>
                                             <Link
-                                                to="/consequences"
+                                                to="/after"
                                                 className="block px-4 py-2 hover:bg-gray-50 hover:text-amber-800"
                                                 onClick={handleLinkClick}
                                             >
-                                                {t.consequences}
+                                                {t.after}
                                             </Link>
                                         </li>
                                     </ul>

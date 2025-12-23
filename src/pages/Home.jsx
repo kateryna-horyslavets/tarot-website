@@ -11,7 +11,7 @@ import DECK_RIDER_WAITE_IMG from '../assets/images/homepage/waite-deck.png';
 import DECK_MAD_MOON_IMG from '../assets/images/homepage/moon-deck.png';
 import DECK_CECOLI_IMG from '../assets/images/homepage/ceccoli-deck.png';
 import DECK_MANARA_IMG from '../assets/images/homepage/manara-deck.png';
-import DECK_CONSEQUENCES_IMG from '../assets/images/homepage/consequences-deck.png';
+import DECK_AFTER_IMG from '../assets/images/homepage/after-deck.png';
 
 export default function Home() {
     const { language } = useContext(LanguageContext);
@@ -57,8 +57,8 @@ export default function Home() {
                 },
                 {
                     name: "ТАРО НАСЛІДКІВ",
-                    path: "/consequences",
-                    img: DECK_CONSEQUENCES_IMG,
+                    path: "/after",
+                    img: DECK_AFTER_IMG,
                     description: "Відмінно підходить для тих, хто вже знайомий з Таро Райдера-Вейта і хоче отримати свіжий погляд, розвинути свої інтерпретації та побачити 'що далі' у кожній історії"
                 },
             ],
@@ -99,9 +99,9 @@ export default function Home() {
                     description: "Used for relationship analysis (romantic, platonic, family), exploring sexuality, hidden desires, and subconscious motives related to intimacy"
                 },
                 {
-                    name: "CONSEQUENCES TAROT",
-                    path: "/consequences",
-                    img: DECK_CONSEQUENCES_IMG,
+                    name: "AFTER TAROT",
+                    path: "/after",
+                    img: DECK_AFTER_IMG,
                     description: "Great for those familiar with Rider-Waite tarot who want a fresh perspective, develop interpretations, and see 'what’s next' in each story"
                 },
             ],

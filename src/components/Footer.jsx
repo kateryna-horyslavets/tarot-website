@@ -18,7 +18,7 @@ export default function Footer() {
             moon: 'Божевільного Місяця',
             ceccoli: 'Ніколетти Чекколі',
             manara: 'Манара',
-            consequences: 'Наслідків',
+            after: 'Наслідків',
             faq: 'Поширені питання',
             madeBy: 'MADE BY'
         },
@@ -29,7 +29,7 @@ export default function Footer() {
             moon: 'Deviant Moon',
             ceccoli: 'Nicoletta Ceccoli',
             manara: 'Manara',
-            consequences: 'After',
+            after: 'After',
             faq: 'FAQ',
             madeBy: 'MADE BY'
         }
@@ -104,11 +104,11 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    to="/consequences"
+                                    to="/after"
                                     onClick={handleScrollToTop}
                                     className="hover:text-amber-700 transition-colors"
                                 >
-                                    {t.consequences}
+                                    {t.after}
                                 </Link>
                             </li>
                         </ul>
