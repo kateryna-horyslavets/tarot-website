@@ -34,7 +34,7 @@ export default function Footer() {
     const t = translations[language];
 
     return (
-        <footer className="bg-white text-amber-950 font-montserrat w-full pt-6 pb-6">
+        <footer className="bg-white text-amber-950 font-montserrat w-full pt-6">
             <div className="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-start">
 
                 <div className="flex flex-col items-center md:w-auto mb-8">
