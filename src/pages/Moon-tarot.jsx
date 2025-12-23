@@ -28,7 +28,7 @@ export default function MoonTarotPage() {
         >
 
             <div className="flex flex-col items-center lg:items-start z-10 max-w-lg text-center lg:text-left pt-20 -ml-8">
-                <h1 className="text-7xl font-montserrat font-bold text-purple-800 drop-shadow-[4px_3px_0px_rgba(0,0,0,0.2)]">
+                <h1 className="text-7xl font-montserrat font-bold text-purple-800 drop-shadow-[4px_3px_0px_rgba(0,0,0,0.2)] pb-8">
                     {t.title}
                 </h1>
 
