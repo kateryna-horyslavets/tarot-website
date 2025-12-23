@@ -5,7 +5,10 @@ import Footer from "./components/Footer"
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import WaiteTarotPage from "./pages/Waite-tarot";
+import MoonTarotPage from "./pages/Moon-tarot";
 import CeccoliTarotPage from "./pages/Ceccoli-tarot";
+import ManaraTarotPage from "./pages/Manara-tarot";
+import ConsequencesTarotPage from "./pages/Consequences-tarot";
 import Cups from "./pages/Cups";
 import Pentacles from "./pages/Pentacles";
 import Swords from "./pages/Swords";
@@ -24,7 +27,10 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/waite" element={<WaiteTarotPage/>} />
+                        <Route path="/moon" element={<MoonTarotPage/>} />
                         <Route path="/ceccoli" element={<CeccoliTarotPage/>} />
+                        <Route path="/manara" element={<ManaraTarotPage/>} />
+                        <Route path="/consequences" element={<ConsequencesTarotPage/>} />
                         <Route path="/questions" element={<Questions/>} />
                         <Route path="/cups" element={<Cups />} />
                         <Route path="/pentacles" element={<Pentacles />} />

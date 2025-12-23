@@ -1,3 +1,3 @@
-export default class CeccoliTarotMeaning {
+export default class CeccoliTarotPage  {
 
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { LanguageContext } from '../Language'; // поправ шлях, якщо треба
+import { LanguageContext } from '../Language';
 
 const LOGO_ICON_PATH = '/logo.png';
 
@@ -13,7 +13,10 @@ export default function Navbar() {
             home: 'ГОЛОВНА',
             decks: 'КОЛОДИ ТАРО',
             waite: 'ТАРО УЕЙТА',
+            moon: 'ТАРО БОЖЕВІЛЬНОГО МІСЯЦЯ',
             ceccoli: 'ТАРО НІККОЛЕТИ ЧЕККОЛІ',
+            manara: 'ТАРО МАНАРА',
+            consequences: 'ТАРО НАСЛІДКІВ',
             faq: 'ПОШИРЕНІ ПИТАННЯ',
             lang: 'UA',
         },
@@ -21,7 +24,10 @@ export default function Navbar() {
             home: 'HOME',
             decks: 'TAROT DECKS',
             waite: 'RIDER-WAITE TAROT',
+            moon: 'MAD MOON TAROT',
             ceccoli: 'NICOLETTA CECCOLI TAROT',
+            manara: 'MANARA TAROT',
+            consequences: 'CONSEQUENCES TAROT',
             faq: 'FAQ',
             lang: 'EN',
         },
@@ -97,11 +103,38 @@ export default function Navbar() {
                                         </li>
                                         <li>
                                             <Link
+                                                to="/moon"
+                                                className="block px-4 py-2 hover:bg-gray-50 hover:text-amber-800"
+                                                onClick={handleLinkClick}
+                                            >
+                                                {t.moon}
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
                                                 to="/ceccoli"
                                                 className="block px-4 py-2 hover:bg-gray-50 hover:text-amber-800"
                                                 onClick={handleLinkClick}
                                             >
                                                 {t.ceccoli}
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                to="/manara"
+                                                className="block px-4 py-2 hover:bg-gray-50 hover:text-amber-800"
+                                                onClick={handleLinkClick}
+                                            >
+                                                {t.manara}
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                to="/consequences"
+                                                className="block px-4 py-2 hover:bg-gray-50 hover:text-amber-800"
+                                                onClick={handleLinkClick}
+                                            >
+                                                {t.consequences}
                                             </Link>
                                         </li>
                                     </ul>
