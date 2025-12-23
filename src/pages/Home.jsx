@@ -16,12 +16,12 @@ import DECK_CONSEQUENCES_IMG from '../assets/images/homepage/consequences-deck.p
 export default function Home() {
     const { language } = useContext(LanguageContext);
 
-    const baseTextStyle = "text-amber-950 font-tarot-elegant text-opacity-90";
-    const sectionHeadingStyle = "text-4xl md:text-6xl font-normal text-amber-950 mb-2 font-tarot-elegant";
+    const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
+    const sectionHeadingStyle = "text-5xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] mb-2 font-montserrat";
 
     const content = {
         ua: {
-            heroTitle: 'ЗНАЙДИ БАЖАНІ ВІДПОВІДІ НА СВОЇ ЗАПИТАТННЯ',
+            heroTitle: 'ЗНАЙДИ БАЖАНІ ВІДПОВІДІ НА СВОЇ ЗАПИТАННЯ',
             introText: `Таро - це не просто колода карт, це стародавня, багатогранна система символів та архетипів, яка використовується як інструмент для самопізнання, медитації та передбачення.
             Кожна колода, найчастіше складена з 78 карт, є візуальною розповіддю про людський досвід`,
             section1Title: 'КОЛОДА ТРАДИЦІЙНО ПОДІЛЯЄТЬСЯ НА ДВІ ЧАСТИНИ',
@@ -125,7 +125,7 @@ export default function Home() {
 
     return (
         <div
-            className="font-tarot"
+            className="font-montserrat"
             style={{
                 backgroundImage: `url(${HOMEPAGE_BACKGROUND_IMG})`,
                 backgroundSize: 'cover',
@@ -143,7 +143,7 @@ export default function Home() {
                 }}
             >
                 <div className="z-10 p-4 max-w-4xl mx-auto">
-                    <h1 className="text-6xl md:text-7xl font-bold text-white drop-shadow-lg tracking-wide pt-14">
+                    <h1 className="text-7xl font-montserrat font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] tracking-wide pt-14">
                         {heroTitle}
                     </h1>
                 </div>
@@ -159,7 +159,6 @@ export default function Home() {
                     <div className="md:w-1/2 flex justify-center">
                         <img
                             src={INTRO_DECKS_IMG}
-                            alt="Intro decks"
                         />
                     </div>
                 </section>
@@ -171,7 +170,7 @@ export default function Home() {
 
                     <div className="flex flex-col md:flex-row justify-center gap-16 mt-6">
                         <div className="md:w-1/2 text-center p-4">
-                            <p className={`text-xl mb-2 ${baseTextStyle}`}>
+                            <p className={`text-xl mb-4 ${baseTextStyle}`}>
                                 {majorArcanaTitle}
                             </p>
                             <p className={`text-xl mb-6 ${baseTextStyle}`}>
@@ -179,15 +178,14 @@ export default function Home() {
                             </p>
                             <img
                                 src={MAJOR_ARCANA_SPREAD_IMG}
-                                alt="Major Arcana"
                                 className="mx-auto"
                             />
                         </div>
                         <div className="md:w-1/2 text-center p-4">
-                            <p className={`text-xl mb-2 ${baseTextStyle}`}>
+                            <p className={`text-xl mb-4 ${baseTextStyle}`}>
                                 {minorArcanaTitle}
                             </p>
-                            <p className={`text-xl mb-2 ${baseTextStyle}`}>
+                            <p className={`text-xl mb-6 ${baseTextStyle}`}>
                                 {minorArcanaDesc}
                             </p>
                             <img
