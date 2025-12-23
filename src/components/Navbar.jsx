@@ -12,7 +12,7 @@ export default function Navbar() {
         ua: {
             home: 'ГОЛОВНА',
             decks: 'КОЛОДИ ТАРО',
-            waite: 'ТАРО УЕЙТА',
+            waite: 'ТАРО РАЙДЕРА-УЕЙТА',
             moon: 'ТАРО БОЖЕВІЛЬНОГО МІСЯЦЯ',
             ceccoli: 'ТАРО НІККОЛЕТИ ЧЕККОЛІ',
             manara: 'ТАРО МАНАРА',

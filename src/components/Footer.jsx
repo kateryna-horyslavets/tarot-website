@@ -14,9 +14,11 @@ export default function Footer() {
         ua: {
             home: 'Головна',
             decksTitle: 'Колоди таро',
-            waite: 'Райдер-Уейт',
-            ceccoli: 'Ніколетта Чекколі',
+            waite: 'Райдера-Уейта',
+            moon: 'Божевільного Місяця',
+            ceccoli: 'Ніколетти Чекколі',
             manara: 'Манара',
+            consequences: 'Наслідків',
             faq: 'Поширені питання',
             madeBy: 'MADE BY'
         },
@@ -24,8 +26,10 @@ export default function Footer() {
             home: 'Home',
             decksTitle: 'Tarot Decks',
             waite: 'Rider-Waite',
+            moon: 'Mad Moon',
             ceccoli: 'Nicoletta Ceccoli',
             manara: 'Manara',
+            consequences: 'Consequences',
             faq: 'FAQ',
             madeBy: 'MADE BY'
         }
@@ -34,7 +38,7 @@ export default function Footer() {
     const t = translations[language];
 
     return (
-        <footer className="bg-white text-amber-950 font-montserrat w-full pt-6">
+        <footer className="bg-white text-amber-950 font-montserrat w-full pt-8 pb-8">
             <div className="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-start">
 
                 <div className="flex flex-col items-center md:w-auto mb-8">
@@ -73,6 +77,15 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
+                                    to="/moon"
+                                    onClick={handleScrollToTop}
+                                    className="hover:text-amber-700 transition-colors"
+                                >
+                                    {t.moon}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
                                     to="/ceccoli"
                                     onClick={handleScrollToTop}
                                     className="hover:text-amber-700 transition-colors"
@@ -81,9 +94,22 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <span className="text-amber-900">
+                                <Link
+                                    to="/manara"
+                                    onClick={handleScrollToTop}
+                                    className="hover:text-amber-700 transition-colors"
+                                >
                                     {t.manara}
-                                </span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to="/consequences"
+                                    onClick={handleScrollToTop}
+                                    className="hover:text-amber-700 transition-colors"
+                                >
+                                    {t.consequences}
+                                </Link>
                             </li>
                         </ul>
                     </div>
