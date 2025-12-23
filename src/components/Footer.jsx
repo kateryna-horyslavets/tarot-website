@@ -26,7 +26,7 @@ export default function Footer() {
             home: 'Home',
             decksTitle: 'Tarot Decks',
             waite: 'Rider-Waite',
-            moon: 'Mad Moon',
+            moon: 'Deviant Moon',
             ceccoli: 'Nicoletta Ceccoli',
             manara: 'Manara',
             consequences: 'Consequences',
@@ -41,12 +41,12 @@ export default function Footer() {
         <footer className="bg-white text-amber-950 font-montserrat w-full pt-8 pb-8">
             <div className="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-start">
 
-                <div className="flex flex-col items-center md:w-auto mb-8">
+                <div className="flex flex-col items-center md:w-auto mb-6 pt-6">
                     <img
                         src="/logo.png"
                         className="w-24 h-24 mb-2 object-contain"
                     />
-                    <span className="text-xl text-amber-900 uppercase tracking-widest">
+                    <span className="text-xl text-amber-900 uppercase tracking-widest pt-2">
                         MyTarotGuide
                     </span>
                 </div>
@@ -124,7 +124,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center md:items-end w-full md:w-auto mt-10">
+                <div className="flex flex-col items-center md:items-end w-full md:w-auto mt-10 pt-6">
                     <div className="text-xl font-bold uppercase tracking-wide">
                         {t.madeBy}
                     </div>
