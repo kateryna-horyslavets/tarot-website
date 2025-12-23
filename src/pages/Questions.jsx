@@ -89,7 +89,7 @@ export default function Questions() {
                 }}
             >
                 <h1 className="text-7xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] tracking-wide pt-14">
-                    {language === 'ua' ? 'ПОШИРЕНІ' : 'FREQUENTLY ASKED'} <br /> {language === 'ua' ? 'ЗАПИТАННЯ' : 'QUESTIONS'}
+                    {language === 'ua' ? 'ПОШИРЕНІ' : 'FREQUENTLY ASKED'} <br /> {language === 'ua' ? 'ПИТАННЯ' : 'QUESTIONS'}
                 </h1>
             </section>
 
