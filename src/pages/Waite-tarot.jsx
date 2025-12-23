@@ -35,8 +35,8 @@ import WANDS from '../assets/images/waite tarot page/Wands01.png';
 export default function WaiteTarotPage() {
     const { language } = useContext(LanguageContext);
 
-    const baseTextStyle = "text-amber-950 font-tarot-elegant text-opacity-90";
-    const sectionHeadingStyle = "text-xl md:text-4xl font-normal text-amber-950 font-tarot-elegant";
+    const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
+    const sectionHeadingStyle = "text-xl md:text-4xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
 
     const content = {
         ua: {
@@ -164,7 +164,7 @@ export default function WaiteTarotPage() {
 
     return (
         <div
-            className="font-tarot"
+            className="font-montserrat"
             style={{
                 backgroundImage: `url(${WAITE_BACKGROUND_IMG})`,
                 backgroundSize: 'cover',
@@ -181,8 +181,8 @@ export default function WaiteTarotPage() {
                     backgroundAttachment: 'scroll',
                 }}
             >
-                <div className="z-10 p-4 max-w-4xl mx-auto">
-                    <h1 className="text-6xl md:text-7xl font-bold text-white drop-shadow-lg tracking-wide pt-14">
+                <div className="z-10 p-4 mx-auto">
+                    <h1 className="text-7xl font-bold text-white drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] tracking-wide pt-14">
                         {title}
                     </h1>
                 </div>
@@ -240,8 +240,8 @@ export default function WaiteTarotPage() {
                     </div>
                 </section>
 
-                <section className="mt-20 mb-20">
-                    <div className="relative flex items-center justify-center w-full my-8">
+                <section className="mt-20 mb-22">
+                    <div className="relative flex items-center justify-center my-12">
                         <div className="flex-grow border-t-2 border-amber-950 opacity-50 max-w-[calc(50%-100px)]"></div>
                         <h2 className={`${sectionHeadingStyle} text-center mx-4 whitespace-nowrap`}>
                             {suitsTitle}
@@ -249,24 +249,24 @@ export default function WaiteTarotPage() {
                         <div className="flex-grow border-t-2 border-amber-950 opacity-50 max-w-[calc(50%-100px)]"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                         {suits.map((suit) => (
                             <Link
                                 to={suit.path}
                                 key={suit.name}
-                                className="group block text-center transition-all duration-300 transform hover:scale-105 relative p-6 rounded-xl"
+                                className="group block text-center transition-all duration-300 transform hover:scale-110 relative p-6 rounded-xl"
                             >
                                 <div className="absolute inset-0 rounded-3xl bg-white/60 opacity-0 group-hover:opacity-100
-                                transition-opacity duration-300 z-0 group-hover:shadow-xl"></div>
+                                transition-opacity duration-300 group-hover:shadow-xl"></div>
                                 <img
                                     src={suit.img}
                                     alt={suit.name}
-                                    className="relative z-10 max-w-full max-h-full object-contain rounded-md transition-transform duration-300 mx-auto"
+                                    className="relative max-w-full max-h-full object-contain rounded-md transition-transform duration-300 mx-auto"
                                 />
                                 <p className="mt-4 text-lg text-amber-950 font-normal group-hover:text-amber-800 leading-tight relative z-10">
                                     {suit.name}
                                 </p>
-                                <div className="h-32 relative z-10">
+                                <div className="h-40 relative z-10">
                                     <p className="mt-2 px-1 text-sm text-amber-950 font-tarot-elegant opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                                         {suit.description}
                                     </p>
