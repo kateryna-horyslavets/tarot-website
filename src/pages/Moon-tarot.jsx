@@ -32,10 +32,6 @@ export default function MoonTarotPage() {
                     {t.title}
                 </h1>
 
-                <h2 className="text-2xl lg:text-3xl font-montserrat font-bold text-amber-900 mt-6 mb-8">
-                    {t.subtitle}
-                </h2>
-
                 <Link
                     to="/"
                     className="px-8 py-3 bg-purple-50 text-amber-950 font-montserrat font-bold rounded-3xl hover:bg-purple-100 drop-shadow-[3px_3px_2px_rgba(0,0,0,0.3)]"
