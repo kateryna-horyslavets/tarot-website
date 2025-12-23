@@ -39,11 +39,11 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-white border-b border-gray-200 font-tarot fixed top-0 left-0 w-full z-50">
+        <nav className="bg-white border-b border-gray-200 font-montserrat fixed top-0 left-0 w-full z-50">
             <div className="flex items-center justify-between h-20 px-4 md:px-6">
                 <NavLink to="/" className="flex items-center space-x-4">
                     <img src={LOGO_ICON_PATH} className="h-12 w-12" />
-                    <span className="self-center text-3xl font-tarot whitespace-nowrap text-amber-900 tracking-wider">
+                    <span className="self-center text-2xl font-montserrat text-amber-900 tracking-wider">
                         MyTarotGuide
                     </span>
                 </NavLink>
