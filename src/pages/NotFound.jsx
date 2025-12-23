@@ -5,7 +5,7 @@ import { LanguageContext } from '../Language';
 import NOT_FOUND_BACKGROUND_IMG from '../assets/images/not found/not-found-page-background.png';
 import GROUP_NOT_FOUND from '../assets/images/not found/Group_not_found.png';
 
-const NotFound = () => {
+export default function NotFound() {
     const { language } = useContext(LanguageContext);
 
     const translations = {
@@ -55,5 +55,3 @@ const NotFound = () => {
         </div>
     );
 };
-
-export default NotFound;

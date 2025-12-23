@@ -5,7 +5,7 @@ import { LanguageContext } from '../Language';
 import MOON_BACKGROUND_IMG from '../assets/images/moon tarot page/moon_in_works_background.png';
 import GROUP_MOON from '../assets/images/moon tarot page/Group_moon_in_works.png';
 
-const MoonTarotPage = () => {
+export default function MoonTarotPage() {
     const { language } = useContext(LanguageContext);
 
     const translations = {
@@ -53,5 +53,3 @@ const MoonTarotPage = () => {
         </div>
     );
 };
-
-export default MoonTarotPage;
