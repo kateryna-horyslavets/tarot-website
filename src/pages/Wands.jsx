@@ -22,8 +22,8 @@ import WANDS_HERO_BACKGROUND_IMG from '../assets/images/wands page/wands_hero.pn
 export default function Wands() {
     const { language } = useContext(LanguageContext);
 
-    const baseTextStyle = "text-amber-950 font-tarot-elegant text-opacity-90";
-    const sectionHeadingStyle = "text-xl md:text-5xl font-normal text-amber-950 font-tarot-elegant";
+    const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
+    const sectionHeadingStyle = "text-xl md:text-5xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
 
     const renderFormattedText = (text) => {
         return text.split('\n').map((line, index) => {
@@ -370,7 +370,7 @@ export default function Wands() {
 
     return(
         <div
-            className="font-tarot"
+            className="font-montserrat"
             style={{
                 backgroundImage: `url(${WANDS_BACKGROUND_IMG})`,
                 backgroundSize: 'cover',
@@ -388,7 +388,7 @@ export default function Wands() {
                 }}
             >
                 <div className="z-10 p-4 max-w-4xl ml-10 md:ml-20 text-left">
-                    <h1 className="text-6xl md:text-8xl font-bold text-white drop-shadow-lg tracking-wide pt-14">
+                    <h1 className="text-6xl md:text-8xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] tracking-wide pt-14">
                         {title}
                     </h1>
                 </div>

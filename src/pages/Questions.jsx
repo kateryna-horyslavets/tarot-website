@@ -72,7 +72,7 @@ export default function Questions() {
 
     return (
         <div
-            className="font-tarot min-h-screen"
+            className="font-montserrat"
             style={{
                 backgroundImage: `url(${QUESTIONS_BACKGROUND_IMG})`,
                 backgroundSize: 'cover',
@@ -88,13 +88,13 @@ export default function Questions() {
                     backgroundPosition: 'center',
                 }}
             >
-                <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg tracking-wide">
+                <h1 className="text-7xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] tracking-wide pt-14">
                     {language === 'ua' ? 'ПОШИРЕНІ' : 'FREQUENTLY ASKED'} <br /> {language === 'ua' ? 'ЗАПИТАННЯ' : 'QUESTIONS'}
                 </h1>
             </section>
 
             <div className="py-12 px-4 md:px-12 lg:px-28">
-                <div className="max-w-5xl mx-auto space-y-4">
+                <div className="max-w-6xl mx-auto space-y-4">
                     {questions.map((q, index) => (
                         <div key={index} className="border-b border-amber-950">
                             <button
