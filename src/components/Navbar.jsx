@@ -27,7 +27,7 @@ export default function Navbar() {
             moon: 'Deviant Moon tarot',
             ceccoli: 'Nicoletta Ceccoli tarot',
             manara: 'Manara tarot',
-            consequences: 'Consequences tarot',
+            consequences: 'After tarot',
             faq: 'FAQ',
             lang: 'EN',
         },

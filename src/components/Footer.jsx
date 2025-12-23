@@ -29,7 +29,7 @@ export default function Footer() {
             moon: 'Deviant Moon',
             ceccoli: 'Nicoletta Ceccoli',
             manara: 'Manara',
-            consequences: 'Consequences',
+            consequences: 'After',
             faq: 'FAQ',
             madeBy: 'MADE BY'
         }
