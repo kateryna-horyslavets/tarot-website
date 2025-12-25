@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# MyTarotGuide 🃏
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**MyTarotGuide** is a feature-rich, bilingual React application designed to be a comprehensive digital library for Tarot enthusiasts. It provides deep insights into various decks, card symbolism, and archetypal meanings, featuring a highly interactive navigation system.
 
-## Available Scripts
+## 🌟 Key Features
 
-In the project directory, you can run:
+### 🌍 Bilingual Experience
+The platform offers a fully localized experience in **Ukrainian** and **English**.
+* **Seamless Switching**: Users can toggle languages instantly at any time.
+* **Persistent Settings**: The application remembers your language preference for your next visit.
+* **Culturally Tailored**: All card meanings and descriptions are carefully translated to preserve the esoteric nuances of each deck.
 
-### `npm start`
+### 📚 Diverse Tarot Library
+Explore a growing collection of decks, each with its own unique "voice":
+* **Rider-Waite**: The foundation of modern Tarot study.
+* **Deviant Moon**: A journey into the subconscious and the "shadow" self.
+* **Nicoletta Ceccoli**: A soft, surreal world of emotional exploration.
+* **Manara**: Focused on the complex dynamics of relationships and intimacy.
+* **After Tarot**: A unique perspective on what happens a moment after the traditional scenes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🖼️ Structured Card Analysis
+Every card is analyzed through multiple lenses to provide a holistic understanding:
+* **Personality**: The traits and people represented by the card.
+* **Symbolism**: A breakdown of the visual metaphors within the artwork.
+* **Advice**: Practical, actionable guidance for the user's life.
+* **Specialized Suits**: Minor Arcana are further categorized into Numbered cards and Court cards for better clarity.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **React.js**: For a fast, responsive user interface.
+* **React Router**: For seamless navigation between different decks and suits.
+* **Tailwind CSS**: For elegant, responsive styling and high-quality typography.
+* **Browser State**: Utilized to ensure your journey is consistent across sessions.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.  **Installation**:
+    ```bash
+    npm install
+    ```
+2.  **Launch**:
+    ```bash
+    npm start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📜 License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Copyright © 2025 kloqaep. All rights reserved.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is private and intended for personal use and portfolio demonstration only. No part of this project (code, text, or assets) may be copied, redistributed, or used in other projects without permission.
