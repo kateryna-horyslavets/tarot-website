@@ -1,4 +1,5 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { LanguageContext } from '../Language';
 
 import ACE_PENTACLES from '../assets/images/pentacles page/Pentacles01.png';
@@ -21,6 +22,28 @@ import PENTACLES_HERO_BACKGROUND_IMG from '../assets/images/pentacles page/penta
 
 export default function Pentacles() {
     const { language } = useContext(LanguageContext);
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }, [hash]);
+
+    const handleSmoothScroll = (e, targetId) => {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, null, `#${targetId}`);
+        }
+    };
 
     const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
     const sectionHeadingStyle = "text-xl md:text-5xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
@@ -49,7 +72,7 @@ export default function Pentacles() {
             defaultCards: "ПЕРЕЛІК КАРТ",
             courtiersCards: "ПРИДВОРНІ",
             meaning: "ЗНАЧЕННЯ КАРТ",
-            defaultCups: [
+            defaultPentacles: [
                 {name: "TУЗ ПЕНТАКЛІВ",
                     img: ACE_PENTACLES,
                     text: "Основне значення: нові можливості, процвітання, фінансовий успіх, матеріальний дар, прорив.\n" +
@@ -161,7 +184,7 @@ export default function Pentacles() {
                         "\n" +
                         "Порада: цінуйте свою сім'ю та родинні зв'язки. Подумайте про довгострокову фінансову безпеку та збереження спадщини."},
             ],
-            courtiersCups: [
+            courtiersPentacles: [
                 {name: "ПАЖ ПЕНТАКЛІВ",
                     img: PAGE_PENTACLES,
                     text: "Особистість: практична, старанна, серйозна та методична людина. Той, хто тільки починає свій шлях у бізнесі чи навчанні і зосереджений на здобутті матеріальних знань.\n" +
@@ -206,7 +229,7 @@ export default function Pentacles() {
             defaultCards: "LIST OF CARDS",
             courtiersCards: "COURTIERS",
             meaning: "CARDS MEANING",
-            defaultCups: [
+            defaultPentacles: [
                 {name: "ACE OF PENTACLES",
                     img: ACE_PENTACLES,
                     text: "Main meaning: new opportunities, prosperity, financial success, material gift, breakthrough.\n" +
@@ -318,7 +341,7 @@ export default function Pentacles() {
                         "\n" +
                         "Advice: value your family and family ties. Think about long-term financial security and preserving your legacy."},
             ],
-            courtiersCups: [
+            courtiersPentacles: [
                 {name: "PAGE OF PENTACLES",
                     img: PAGE_PENTACLES,
                     text: "Personality: Practical, diligent, serious and methodical person. Someone who is just starting their journey in business or education and is focused on acquiring material knowledge.\n" +
@@ -364,8 +387,8 @@ export default function Pentacles() {
         defaultCards,
         courtiersCards,
         meaning,
-        defaultCups,
-        courtiersCups,
+        defaultPentacles,
+        courtiersPentacles,
     } = content[language];
 
     return(
@@ -384,7 +407,6 @@ export default function Pentacles() {
                     backgroundImage: `url(${PENTACLES_HERO_BACKGROUND_IMG})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'scroll',
                 }}
             >
                 <div className="z-10 p-4 max-w-4xl ml-10 md:ml-20 text-left">
@@ -394,10 +416,7 @@ export default function Pentacles() {
                 </div>
 
                 <div className="absolute right-0 bottom-0 h-[94%] w-full md:w-[55%] overflow-hidden z-0">
-                    <img
-                        src={GROUP_PENTACLES}
-                        className="w-full object-cover object-bottom-right"
-                    />
+                    <img src={GROUP_PENTACLES} alt="Group Pentacles" className="w-full object-cover object-bottom-right" />
                 </div>
             </section>
 
@@ -413,19 +432,16 @@ export default function Pentacles() {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
-                        {defaultCups.map((card, index) => (
+                        {defaultPentacles.map((card, index) => (
                             <a
                                 href={`#default-pentacle-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `default-pentacle-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 8 ? 'md:col-start-2' : ''
                                 }`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>
@@ -444,17 +460,14 @@ export default function Pentacles() {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
-                        {courtiersCups.map((card, index) => (
+                        {courtiersPentacles.map((card, index) => (
                             <a
                                 href={`#courtier-pentacle-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `courtier-pentacle-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>
@@ -473,7 +486,7 @@ export default function Pentacles() {
                     </div>
 
                     <div className="flex flex-col gap-24">
-                        {defaultCups.map((card, index) => (
+                        {defaultPentacles.map((card, index) => (
                             <div
                                 id={`default-pentacle-${index}`}
                                 key={card.name}
@@ -491,7 +504,7 @@ export default function Pentacles() {
                             </div>
                         ))}
 
-                        {courtiersCups.map((card, index) => (
+                        {courtiersPentacles.map((card, index) => (
                             <div
                                 id={`courtier-pentacle-${index}`}
                                 key={card.name}

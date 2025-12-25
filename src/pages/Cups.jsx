@@ -1,4 +1,5 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { LanguageContext } from '../Language';
 
 import ACE_CUPS from '../assets/images/cups page/Cups01.png';
@@ -21,6 +22,28 @@ import CUPS_HERO_BACKGROUND_IMG from '../assets/images/cups page/cups_hero.png';
 
 export default function Cups() {
     const { language } = useContext(LanguageContext);
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }, [hash]);
+
+    const handleSmoothScroll = (e, targetId) => {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, null, `#${targetId}`);
+        }
+    };
 
     const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
     const sectionHeadingStyle = "text-xl md:text-5xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
@@ -386,7 +409,6 @@ export default function Cups() {
                     backgroundImage: `url(${CUPS_HERO_BACKGROUND_IMG})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'scroll',
                 }}
             >
                 <div className="z-10 p-4 max-w-4xl ml-10 md:ml-20 text-left">
@@ -398,6 +420,7 @@ export default function Cups() {
                 <div className="absolute right-0 bottom-0 h-[94%] w-full md:w-[55%] overflow-hidden z-0">
                     <img
                         src={GROUP_CUPS}
+                        alt="Group Cups"
                         className="w-full object-cover object-bottom-right"
                     />
                 </div>
@@ -419,6 +442,7 @@ export default function Cups() {
                             <a
                                 href={`#default-cup-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `default-cup-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 8 ? 'md:col-start-2' : ''
                                 }`}
@@ -450,6 +474,7 @@ export default function Cups() {
                             <a
                                 href={`#courtier-cup-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `courtier-cup-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105`}
                             >
                                 <img

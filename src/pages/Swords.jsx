@@ -1,4 +1,5 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { LanguageContext } from '../Language';
 
 import ACE_SWORDS from '../assets/images/swords page/Swords01.png';
@@ -21,6 +22,28 @@ import SWORDS_HERO_BACKGROUND_IMG from '../assets/images/swords page/swords_hero
 
 export default function Swords() {
     const { language } = useContext(LanguageContext);
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }, [hash]);
+
+    const handleSmoothScroll = (e, targetId) => {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, null, `#${targetId}`);
+        }
+    };
 
     const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
     const sectionHeadingStyle = "text-xl md:text-5xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
@@ -384,7 +407,6 @@ export default function Swords() {
                     backgroundImage: `url(${SWORDS_HERO_BACKGROUND_IMG})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'scroll',
                 }}
             >
                 <div className="z-10 p-4 max-w-4xl ml-10 md:ml-20 text-left">
@@ -396,13 +418,13 @@ export default function Swords() {
                 <div className="absolute right-0 bottom-0 h-[94%] w-full md:w-[55%] overflow-hidden z-0">
                     <img
                         src={GROUP_SWORDS}
+                        alt="Group Swords"
                         className="w-full object-cover object-bottom-right"
                     />
                 </div>
             </section>
 
             <div className="py-20 max-w-7xl mx-auto px-4">
-
                 <section className="mb-40">
                     <div className="relative flex items-center justify-center w-full my-8">
                         <div className="flex-grow border-t-2 border-amber-950 opacity-50 max-w-[calc(50%-100px)]"></div>
@@ -417,15 +439,12 @@ export default function Swords() {
                             <a
                                 href={`#default-sword-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `default-sword-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 8 ? 'md:col-start-2' : ''
                                 }`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>
@@ -448,13 +467,10 @@ export default function Swords() {
                             <a
                                 href={`#courtier-sword-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `courtier-sword-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>

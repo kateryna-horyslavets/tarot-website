@@ -1,4 +1,5 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { LanguageContext } from '../Language';
 
 import ACE_WANDS from '../assets/images/wands page/Wands01.png';
@@ -21,6 +22,28 @@ import WANDS_HERO_BACKGROUND_IMG from '../assets/images/wands page/wands_hero.pn
 
 export default function Wands() {
     const { language } = useContext(LanguageContext);
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }, [hash]);
+
+    const handleSmoothScroll = (e, targetId) => {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, null, `#${targetId}`);
+        }
+    };
 
     const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
     const sectionHeadingStyle = "text-xl md:text-5xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
@@ -384,7 +407,6 @@ export default function Wands() {
                     backgroundImage: `url(${WANDS_HERO_BACKGROUND_IMG})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'scroll',
                 }}
             >
                 <div className="z-10 p-4 max-w-4xl ml-10 md:ml-20 text-left">
@@ -394,10 +416,7 @@ export default function Wands() {
                 </div>
 
                 <div className="absolute right-0 bottom-0 h-[94%] w-full md:w-[55%] overflow-hidden z-0">
-                    <img
-                        src={GROUP_WANDS}
-                        className="w-full object-cover object-bottom-right"
-                    />
+                    <img src={GROUP_WANDS} alt="Group Wands" className="w-full object-cover object-bottom-right" />
                 </div>
             </section>
 
@@ -417,15 +436,12 @@ export default function Wands() {
                             <a
                                 href={`#default-wand-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `default-wand-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 8 ? 'md:col-start-2' : ''
                                 }`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>
@@ -448,13 +464,10 @@ export default function Wands() {
                             <a
                                 href={`#courtier-wand-${index}`}
                                 key={card.name}
+                                onClick={(e) => handleSmoothScroll(e, `courtier-wand-${index}`)}
                                 className={`text-center group transition-transform duration-300 hover:scale-105`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>
