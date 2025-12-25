@@ -5,28 +5,28 @@ import { LanguageContext } from '../Language';
 import WAITE_BACKGROUND_IMG from '../assets/images/waite tarot page/waite-page-background.png';
 import WAITE_HERO_BACKGROUND_IMG from '../assets/images/waite tarot page/hero-background-waite.png';
 import DECK_WAITE_IMG from '../assets/images/waite tarot page/waite-deck.png';
-import ARCANA_THE_FOOL from '../assets/images/waite tarot page/00-TheFool.png';
-import ARCANA_THE_MAGICIAN from '../assets/images/waite tarot page/01-TheMagician.png';
-import ARCANA_THE_HIGH_PRIESTESS from '../assets/images/waite tarot page/02-TheHighPriestess.png';
-import ARCANA_THE_EMPRESS from '../assets/images/waite tarot page/03-TheEmpress.png';
-import ARCANA_THE_EMPEROR from '../assets/images/waite tarot page/04-TheEmperor.png';
-import ARCANA_THE_HIEROPHANT from '../assets/images/waite tarot page/05-TheHierophant.png';
-import ARCANA_THE_LOVERS from '../assets/images/waite tarot page/06-TheLovers.png';
-import ARCANA_THE_CHARIOT from '../assets/images/waite tarot page/07-TheChariot.png';
-import ARCANA_STRENGTH from '../assets/images/waite tarot page/08-Strength.png';
-import ARCANA_THE_HERMIT from '../assets/images/waite tarot page/09-TheHermit.png';
-import ARCANA_WHEEL_OF_FORTUNE from '../assets/images/waite tarot page/10-WheelOfFortune.png';
-import ARCANA_JUSTICE from '../assets/images/waite tarot page/11-Justice.png';
-import ARCANA_THE_HANGED_MAN from '../assets/images/waite tarot page/12-TheHangedMan.png';
-import ARCANA_DEATH from '../assets/images/waite tarot page/13-Death.png';
-import ARCANA_TEMPERANCE from '../assets/images/waite tarot page/14-Temperance.png';
-import ARCANA_THE_DEVIL from '../assets/images/waite tarot page/15-TheDevil.png';
-import ARCANA_THE_TOWER from '../assets/images/waite tarot page/16-TheTower.png';
-import ARCANA_THE_STAR from '../assets/images/waite tarot page/17-TheStar.png';
-import ARCANA_THE_MOON from '../assets/images/waite tarot page/18-TheMoon.png';
-import ARCANA_THE_SUN from '../assets/images/waite tarot page/19-TheSun.png';
-import ARCANA_JUDGEMENT from '../assets/images/waite tarot page/20-Judgement.png';
-import ARCANA_THE_WORLD from '../assets/images/waite tarot page/21-TheWorld.png';
+import ARCANA_THE_FOOL from '../assets/images/arcana/00-TheFool.png';
+import ARCANA_THE_MAGICIAN from '../assets/images/arcana/01-TheMagician.png';
+import ARCANA_THE_HIGH_PRIESTESS from '../assets/images/arcana/02-TheHighPriestess.png';
+import ARCANA_THE_EMPRESS from '../assets/images/arcana/03-TheEmpress.png';
+import ARCANA_THE_EMPEROR from '../assets/images/arcana/04-TheEmperor.png';
+import ARCANA_THE_HIEROPHANT from '../assets/images/arcana/05-TheHierophant.png';
+import ARCANA_THE_LOVERS from '../assets/images/arcana/06-TheLovers.png';
+import ARCANA_THE_CHARIOT from '../assets/images/arcana/07-TheChariot.png';
+import ARCANA_STRENGTH from '../assets/images/arcana/08-Strength.png';
+import ARCANA_THE_HERMIT from '../assets/images/arcana/09-TheHermit.png';
+import ARCANA_WHEEL_OF_FORTUNE from '../assets/images/arcana/10-WheelOfFortune.png';
+import ARCANA_JUSTICE from '../assets/images/arcana/11-Justice.png';
+import ARCANA_THE_HANGED_MAN from '../assets/images/arcana/12-TheHangedMan.png';
+import ARCANA_DEATH from '../assets/images/arcana/13-Death.png';
+import ARCANA_TEMPERANCE from '../assets/images/arcana/14-Temperance.png';
+import ARCANA_THE_DEVIL from '../assets/images/arcana/15-TheDevil.png';
+import ARCANA_THE_TOWER from '../assets/images/arcana/16-TheTower.png';
+import ARCANA_THE_STAR from '../assets/images/arcana/17-TheStar.png';
+import ARCANA_THE_MOON from '../assets/images/arcana/18-TheMoon.png';
+import ARCANA_THE_SUN from '../assets/images/arcana/19-TheSun.png';
+import ARCANA_JUDGEMENT from '../assets/images/arcana/20-Judgement.png';
+import ARCANA_THE_WORLD from '../assets/images/arcana/21-TheWorld.png';
 import CUPS from '../assets/images/waite tarot page/Cups01.png';
 import PENTACLES from '../assets/images/waite tarot page/Pentacles01.png';
 import SWORDS from '../assets/images/waite tarot page/Swords01.png';
@@ -34,6 +34,15 @@ import WANDS from '../assets/images/waite tarot page/Wands01.png';
 
 export default function WaiteTarotPage() {
     const { language } = useContext(LanguageContext);
+
+    const arcanaID = [
+        "the-fool", "the-magician", "the-high-priestess", "the-empress",
+        "the-emperor", "the-hierophant", "the-lovers", "the-chariot",
+        "strength", "the-hermit", "wheel-of-fortune", "justice",
+        "the-hanged-man", "death", "temperance", "the-devil",
+        "the-tower", "the-star", "the-moon", "the-sun",
+        "judgement", "the-world"
+    ];
 
     const baseTextStyle = "text-amber-950 font-montserrat text-opacity-90";
     const sectionHeadingStyle = "text-xl md:text-4xl font-bold text-neutral-50 drop-shadow-[2px_2px_4px_rgba(69,26,3,1)] font-montserrat";
@@ -221,17 +230,13 @@ export default function WaiteTarotPage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-28 gap-y-12 mt-12">
                         {majorArcana.map((card, index) => (
                             <Link
-                                to={card.path || "#"}
+                                to={`/major-arcana#${arcanaID[index]}`}
                                 key={card.name}
                                 className={`text-center group transition-transform duration-300 hover:scale-105 ${
                                     index === 20 ? 'md:col-start-2' : ''
                                 }`}
                             >
-                                <img
-                                    src={card.img}
-                                    alt={card.name}
-                                    className="w-full rounded-lg shadow-lg"
-                                />
+                                <img src={card.img} alt={card.name} className="w-full rounded-lg shadow-lg" />
                                 <p className="mt-3 text-sm md:text-base text-amber-950 font-tarot-elegant">
                                     {card.name}
                                 </p>

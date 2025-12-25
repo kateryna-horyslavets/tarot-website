@@ -9,6 +9,7 @@ import MoonTarotPage from "./pages/Moon-tarot";
 import CeccoliTarotPage from "./pages/Ceccoli-tarot";
 import ManaraTarotPage from "./pages/Manara-tarot";
 import AfterTarotPage from "./pages/After-tarot";
+import MajorArcana from "./pages/Major-arcana";
 import Cups from "./pages/Cups";
 import Pentacles from "./pages/Pentacles";
 import Swords from "./pages/Swords";
@@ -31,7 +32,7 @@ export default function App() {
                         <Route path="/ceccoli" element={<CeccoliTarotPage/>} />
                         <Route path="/manara" element={<ManaraTarotPage/>} />
                         <Route path="/after" element={<AfterTarotPage/>} />
-                        <Route path="/questions" element={<Questions/>} />
+                        <Route path="/major-arcana" element={<MajorArcana/>} />
                         <Route path="/cups" element={<Cups />} />
                         <Route path="/pentacles" element={<Pentacles />} />
                         <Route path="/swords" element={<Swords />} />
