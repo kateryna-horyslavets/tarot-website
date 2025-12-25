@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom'; // Added useLocation
 import { LanguageContext } from '../Language';
 
 const LOGO_ICON_PATH = '/logo.png';
@@ -7,6 +7,7 @@ const LOGO_ICON_PATH = '/logo.png';
 export default function Navbar() {
     const { language, toggleLanguage } = useContext(LanguageContext);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const location = useLocation(); // Hook to check current path
 
     const translations = {
         ua: {
@@ -40,6 +41,15 @@ export default function Navbar() {
          md:p-0 ml-6
          ${isActive ? 'text-amber-800' : 'text-stone-700 hover:text-amber-800'}`;
 
+    // Function to handle the logo click
+    const handleLogoClick = (e) => {
+        if (location.pathname === '/') {
+            // If already on Home, scroll to top instead of just navigating
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        setIsDropdownOpen(false);
+    };
+
     const handleLinkClick = () => {
         setIsDropdownOpen(false);
     };
@@ -47,8 +57,13 @@ export default function Navbar() {
     return (
         <nav className="bg-white border-b border-gray-200 font-montserrat fixed top-0 left-0 w-full z-50">
             <div className="flex items-center justify-between h-20 px-4 md:px-6">
-                <NavLink to="/" className="flex items-center space-x-4">
-                    <img src={LOGO_ICON_PATH} className="h-12 w-12" />
+                {/* Updated NavLink with onClick handler */}
+                <NavLink
+                    to="/"
+                    className="flex items-center space-x-4"
+                    onClick={handleLogoClick}
+                >
+                    <img src={LOGO_ICON_PATH} className="h-12 w-12" alt="Logo" />
                     <span className="self-center text-2xl font-montserrat text-amber-900 tracking-wider">
                         MyTarotGuide
                     </span>
@@ -60,7 +75,7 @@ export default function Navbar() {
                             <NavLink
                                 to="/"
                                 className={getLinkClasses}
-                                onClick={handleLinkClick}
+                                onClick={handleLogoClick} // Also useful for the "Home" text link
                             >
                                 {t.home}
                             </NavLink>
